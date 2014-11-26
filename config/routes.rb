@@ -1,4 +1,7 @@
 Modulo3::Application.routes.draw do
+  get "modulo3/new"
+  match '/tabla', to: 'modulo3#tabla', via: 'get'
+  match '/tabla', to: 'modulo3#grafico', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

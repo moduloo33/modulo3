@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Modulo3</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+#!/usr/bin/ruby
 
-<%= yield %>
+require 'rubygems'
+require 'gruff'
 
-</body>
-</html>
+g = Gruff::Line.new
+g.title = "Estudio poblacional del sexo"
+
+g.data("Casados", [24, 25, 15])
+g.data("Divorciados", [17.5, 17, 22.5])
+g.data("Solteros", [5, 6.5, 9.5])
+
+g.labels = {0 => '2003', 1 => '2004', 2 => '2005'}
+
+g.write('sexo-edad.png')
